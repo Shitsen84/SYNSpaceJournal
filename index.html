@@ -6,7 +6,33 @@
     <title>SYNSpaceJournal</title>
 
     <style>
+.stars{
 
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#88ccff 2px, transparent 2px);
+
+    background-size:
+        180px 180px,
+        260px 260px,
+        420px 420px;
+
+    animation:starsMove 120s linear infinite;
+
+    opacity:0.35;
+
+    z-index:-1;
+
+}
         body{
             margin:0;
             background:#070b11;
@@ -115,10 +141,33 @@
         }
 
     </style>
+@keyframes starsMove{
 
+    from{
+
+        background-position:
+            0 0,
+            0 0,
+            0 0;
+
+    }
+
+    to{
+
+        background-position:
+            -1200px 600px,
+            -800px 400px,
+            -500px 250px;
+
+    }
+
+}
+
+}
 </head>
 
 <body>
+<div class="stars"></div>
 
 <header>
 
