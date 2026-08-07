@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYNSpaceJournal</title>
 
-    <style>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SYNSpaceJournal</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#070b11;
+    color:white;
+    overflow-x:hidden;
+
+}
+
+/* ---------------------- */
+/* Sternenhimmel */
+/* ---------------------- */
+
 .stars{
 
     position:fixed;
@@ -16,224 +39,361 @@
     width:100%;
     height:100%;
 
+    z-index:-2;
+
+    opacity:0.45;
+
     background-image:
         radial-gradient(white 1px, transparent 1px),
-        radial-gradient(white 1px, transparent 1px),
-        radial-gradient(#88ccff 2px, transparent 2px);
+        radial-gradient(#99ddff 1px, transparent 1px),
+        radial-gradient(white 2px, transparent 2px);
 
     background-size:
         180px 180px,
-        260px 260px,
+        280px 280px,
         420px 420px;
 
     animation:starsMove 120s linear infinite;
 
-    opacity:0.35;
+}
 
-    z-index:-1;
+/* ---------------------- */
+
+header{
+
+    position:sticky;
+    top:0;
+
+    background:rgba(10,18,30,.90);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:2px solid #1ba7ff;
+
+    padding:20px;
+
+    text-align:center;
+
+    z-index:1000;
 
 }
-        body{
-            margin:0;
-            background:#070b11;
-            color:white;
-            font-family:Arial, Helvetica, sans-serif;
-        }
 
-        header{
-            background:#101823;
-            padding:20px;
-            text-align:center;
-            border-bottom:2px solid #1ba7ff;
-        }
+header h1{
 
-        header h1{
-            margin:0;
-            color:#39b9ff;
-            font-size:48px;
-        }
+    color:#42c6ff;
 
-        nav{
-            margin-top:20px;
-        }
+    font-size:52px;
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:15px;
-            font-size:20px;
-        }
+    letter-spacing:2px;
 
-       .hero{
+}
 
-    height:600px;
+header p{
+
+    color:#8cb9d8;
+
+    margin-top:8px;
+
+}
+
+nav{
+
+    margin-top:20px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 18px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#35c4ff;
+
+}
+
+/* ---------------------- */
+
+.hero{
+
+    height:650px;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     flex-direction:column;
 
+    text-align:center;
+
     background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url("images/background.png");
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+    url("images/background.png");
 
     background-size:cover;
+
     background-position:center;
-    background-repeat:no-repeat;
 
-        }
+}
 
-        .hero h2{
-            font-size:52px;
-        }
+.hero h2{
 
-        .hero p{
-            font-size:24px;
-        }
+    font-size:58px;
 
-        button{
+    margin-bottom:20px;
 
-            background:#1ba7ff;
-            color:white;
-            border:none;
-            padding:15px 35px;
-            font-size:20px;
-            border-radius:8px;
-            cursor:pointer;
+}
 
-        }
+.hero p{
 
-        .container{
+    font-size:24px;
 
-            width:1200px;
-            margin:auto;
-            padding:50px;
+    color:#d5e7f4;
 
-        }
+}
 
-        .cards{
+button{
 
-            display:grid;
-            grid-template-columns:repeat(3,1fr);
-            gap:25px;
+    margin-top:35px;
 
-        }
+    padding:16px 42px;
 
-        .card{
+    border:none;
 
-            background:#111a25;
-            padding:30px;
-            border-radius:12px;
+    border-radius:10px;
 
-        }
+    background:#1ba7ff;
 
-        footer{
+    color:white;
 
-            text-align:center;
-            padding:40px;
-            background:#101823;
-            margin-top:50px;
+    font-size:20px;
 
-        }
+    cursor:pointer;
 
-    </style>
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    background:#38bfff;
+
+}
+
+/* ---------------------- */
+
+.container{
+
+    width:1200px;
+
+    max-width:95%;
+
+    margin:auto;
+
+    padding:70px 0;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:rgba(20,30,45,.80);
+
+    border:1px solid rgba(80,180,255,.25);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#39b9ff;
+
+}
+
+.card h2{
+
+    color:#42c6ff;
+
+    margin-bottom:18px;
+
+}
+
+.card p{
+
+    line-height:1.7;
+
+}
+
+/* ---------------------- */
+
+footer{
+
+    margin-top:80px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:#101823;
+
+    border-top:2px solid #1ba7ff;
+
+}
+
+/* ---------------------- */
+
 @keyframes starsMove{
 
     from{
 
         background-position:
-            0 0,
-            0 0,
-            0 0;
+        0 0,
+        0 0,
+        0 0;
 
     }
 
     to{
 
         background-position:
-            -1200px 600px,
-            -800px 400px,
-            -500px 250px;
+        -1200px 600px,
+        -900px 400px,
+        -600px 250px;
+
     }
+
 }
-</head>
 
 <body>
+
 <div class="stars"></div>
 
 <header>
 
-<h1>SYNSpaceJournal</h1>
+    <h1>SYNSpaceJournal</h1>
+    <p>Das deutschsprachige Nachrichtenportal für EVE Online</p>
 
-<nav>
-    <a href="#">News</a>
-    <a href="#">Zeitung</a>
-    <a href="#">Events</a>
-    <a href="#">Archiv</a>
-    <a href="#">Unterstützen</a>
-    <a href="#">Kontakt</a>
-</nav>
+    <nav>
+        <a href="#">News</a>
+        <a href="#">Zeitung</a>
+        <a href="#">Events</a>
+        <a href="#">Archiv</a>
+        <a href="#">Unterstützen</a>
+        <a href="#">Kontakt</a>
+    </nav>
 
 </header>
 
 <section class="hero">
 
-<h2>Willkommen in New Eden</h2>
+    <h2>Willkommen im SYNSpaceJournal</h2>
 
-<p>Das deutschsprachige Nachrichtenportal für EVE Online</p>
+    <p>
+        Jeden Mittwoch die neuesten Nachrichten, Interviews,
+        Marktberichte und Community-Events aus New Eden.
+    </p>
 
-<button>Aktuelle Ausgabe lesen</button>
+    <button>📖 Aktuelle Ausgabe lesen</button>
 
 </section>
 
 <div class="container">
 
-<div class="cards">
+    <div class="cards">
 
-<div class="card">
+        <div class="card">
 
-<h2>📰 Aktuelle News</h2>
+            <h2>📰 Aktuelle Ausgabe</h2>
 
-<p>Hier erscheinen später die neuesten Nachrichten.</p>
+            <p>
+                Jeden Mittwoch erscheint eine neue Ausgabe des
+                SYNSpaceJournal mit Berichten, Interviews,
+                Marktanalysen und spannenden Geschichten
+                aus New Eden.
+            </p>
 
-<div class="card">
-        <h2>📰 Aktuelle Ausgabe</h2>
-        <p>Jeden Mittwoch erscheint eine neue Ausgabe des SYNSpaceJournal mit News, Interviews und Berichten aus New Eden.</p>
+        </div>
+
+        <div class="card">
+
+            <h2>💎 Sponsor werden</h2>
+
+            <p>
+                Unterstütze das SYNSpaceJournal als Sponsor.
+                Deine Corporation oder Allianz wird auf
+                der Webseite und in der Zeitung erwähnt.
+            </p>
+
+            <br>
+
+            <strong>Kontakt:</strong><br>
+            Shitsen84 (Ingame)
+
+        </div>
+
+        <div class="card">
+
+            <h2>❤️ Unterstützen</h2>
+
+            <p>
+                Dir gefällt das Projekt?
+                Jede freiwillige ISK-Spende hilft dabei,
+                jede Woche eine neue Ausgabe zu veröffentlichen.
+            </p>
+
+            <br>
+
+            <strong>ISK an:</strong><br>
+            Shitsen84
+
+        </div>
+
     </div>
-
-    <div class="card">
-        <h2>💎 Sponsor werden</h2>
-        <p>Präsentiere deine Corporation oder Allianz auf der Webseite und in der Zeitung.</p>
-        <p><strong>Kontakt:</strong> Shitsen84 (Ingame)</p>
-    </div>
-
-    <div class="card">
-        <h2>❤️ Unterstützen</h2>
-        <p>Gefällt dir das SYNSpaceJournal?</p>
-        <p>Freiwillige ISK-Spenden helfen dabei, jede Woche neue Ausgaben zu erstellen.</p>
-        <p><strong>ISK an:</strong> Shitsen84</p>
-    </div>
-
-</div>
-
-<div class="card">
-
-<h2>🏆 Letzter Gewinner</h2>
-
-<p>Noch keine Ziehung.</p>
-
-</div>
-
-</div>
 
 </div>
 
 <footer>
 
-© 2026 SYNSpaceJournal
+    © 2026 SYNSpaceJournal<br><br>
+
+    <small>
+        Fanprojekt für die deutschsprachige EVE Online Community.
+        EVE Online und alle zugehörigen Marken sind Eigentum von CCP Games.
+    </small>
 
 </footer>
 
 </body>
-
 </html>
