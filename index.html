@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNSpaceJournal</title>
 
+    <style>
+
+        body{
+            margin:0;
+            background:#070b11;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        header{
+            background:#101823;
+            padding:20px;
+            text-align:center;
+            border-bottom:2px solid #1ba7ff;
+        }
+
+        header h1{
+            margin:0;
+            color:#39b9ff;
+            font-size:48px;
+        }
+
+        nav{
+            margin-top:20px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-size:20px;
+        }
+
+        .hero{
+
+            height:500px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+
+            background:linear-gradient(#08111f,#02060c);
+
+        }
+
+        .hero h2{
+            font-size:52px;
+        }
+
+        .hero p{
+            font-size:24px;
+        }
+
+        button{
+
+            background:#1ba7ff;
+            color:white;
+            border:none;
+            padding:15px 35px;
+            font-size:20px;
+            border-radius:8px;
+            cursor:pointer;
+
+        }
+
+        .container{
+
+            width:1200px;
+            margin:auto;
+            padding:50px;
+
+        }
+
+        .cards{
+
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+
+        }
+
+        .card{
+
+            background:#111a25;
+            padding:30px;
+            border-radius:12px;
+
+        }
+
+        footer{
+
+            text-align:center;
+            padding:40px;
+            background:#101823;
+            margin-top:50px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>SYNSpaceJournal</h1>
+
+<nav>
+
+<a href="#">News</a>
+<a href="#">Zeitung</a>
+<a href="#">Lotto</a>
+<a href="#">Archiv</a>
+<a href="#">Events</a>
+<a href="#">Kontakt</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>Willkommen in New Eden</h2>
+
+<p>Das deutschsprachige Nachrichtenportal für EVE Online</p>
+
+<button>Aktuelle Ausgabe lesen</button>
+
+</section>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+
+<h2>📰 Aktuelle News</h2>
+
+<p>Hier erscheinen später die neuesten Nachrichten.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🎰 Jackpot</h2>
+
+<h1>0 ISK</h1>
+
+</div>
+
+<div class="card">
+
+<h2>🏆 Letzter Gewinner</h2>
+
+<p>Noch keine Ziehung.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 SYNSpaceJournal
+
+</footer>
+
+</body>
+
+</html>
